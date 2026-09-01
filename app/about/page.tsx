@@ -9,7 +9,7 @@ export default function About(){
             </h1>
 
             <p className="mt-5 text-base leading-relaxed text-black/50 sm:text-lg">
-            For more information and project files, see the GitHub repo at ...
+            For more information and project files, see the GitHub repo at https://github.com/c-gutz/county-storm-atlas.
             </p>
         </header>
 
