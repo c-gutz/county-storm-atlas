@@ -59,7 +59,7 @@ export default function Analog() {
                     <Search season={0} onSelect={setGeoid} helper={false}/>
                 </div>
 
-                <div className="min-h-0 w-full [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:order-2 lg:flex lg:flex-1 lg:justify-center lg:self-stretch lg:overflow-y-auto">
+                <div className="min-h-0 w-full lg:order-2 lg:flex lg:flex-1 lg:justify-center lg:self-stretch lg:overflow-y-auto">
                     <div className="w-full lg:max-w-[26rem]">
                         {loading ? (
                             <ResultsSkeleton />

@@ -38,7 +38,7 @@ export default function Home() {
           </div>
 
           <div className="mt-3 aspect-[975/610] min-h-0 lg:aspect-auto lg:flex-1">
-            <Map width={975} height={610} season={season} onHover={setHovered} />
+            <Map width={975} height={610} season={season} onHover={setHovered} onSelect={setSelectedGeoid} />
           </div>
 
           <div className="mt-4 shrink-0 xl:flex xl:items-center xl:justify-center xl:gap-8">
@@ -64,7 +64,7 @@ export default function Home() {
 
         <aside
           aria-label="County detail"
-          className="shrink-0 border border-black/10 bg-white lg:min-w-[19rem] lg:flex-1 lg:self-start">
+          className="shrink-0 border border-black/10 bg-white lg:max-h-full lg:min-w-[19rem] lg:flex-1 lg:self-start lg:overflow-y-auto">
           {shown ? <Hover data={shown} season={season} onClear={selected && !hovered ? () => setSelectedGeoid(null) : null} /> : <Search season={season} onSelect={setSelectedGeoid}/>}
         </aside>
 

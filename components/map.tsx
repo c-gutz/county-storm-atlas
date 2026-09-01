@@ -59,11 +59,12 @@ type MapProps = {
     season: number,
     // called with the hovered county's stats, or null on mouse leave.
     // the panel is a sibling of the map now, so the state lives in the page
-    onHover: (feature: any) => void
+    onHover: (feature: any) => void,
+    onSelect: (geoid: string) => void
 }
 
 
-export function Map({width=500, height=500, season=0, onHover} : MapProps){
+export function Map({width=500, height=500, season=0, onHover, onSelect} : MapProps){
     const projection = d3.geoAlbersUsa().fitSize([width, height], geoJsonFiltered)
     const geoPathGenerator = d3.geoPath().projection(projection);
     return (
@@ -86,6 +87,7 @@ export function Map({width=500, height=500, season=0, onHover} : MapProps){
                             style={{ cursor: 'pointer' }}
                             onMouseEnter={onHover.bind(null, stats ?? null)}
                             onMouseLeave={onHover.bind(null, null)}
+                            onClick={() => onSelect(featureItem.id)}
                         />
                     );
                 })}
