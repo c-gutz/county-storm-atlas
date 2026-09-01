@@ -23,7 +23,7 @@ jobs:
       - name: Build realtime data
         env:
           GEE_SERVICE_ACCOUNT_KEY: ${{ secrets.GEE_SERVICE_ACCOUNT_KEY }}
-        run: python realtime/build_realtime.py
+        run: python realtime/realtime_data.py
 
       - name: Commit if changed
         run: |
