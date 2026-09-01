@@ -24,7 +24,7 @@ export default function Home() {
     <main className="mx-auto flex w-full flex-col px-4 pb-6 pt-4 sm:px-6 lg:h-[calc(100dvh-6rem)] lg:pb-0">
       <div className="flex min-h-0 flex-col gap-6 lg:flex-1 lg:flex-row">
 
-        <div className="flex min-h-0 flex-col lg:w-[72%] lg:[@media(max-height:900px)]:w-[62%]">
+        <div className="flex min-h-0 flex-col lg:w-[72%]">
           <div className="shrink-0">
             <p className="text-[0.6875rem] uppercase tracking-[0.16em] text-black/40">
               NOAA Storm Events · 1996–2026
@@ -61,9 +61,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <aside
           aria-label="County detail"
-          className="shrink-0 border border-black/10 bg-white lg:min-w-[19rem] lg:flex-1 lg:self-start">
+          className="shrink-0 border border-black/10 bg-white lg:max-h-[calc(100dvh-8rem)] lg:min-w-[19rem] lg:flex-1 lg:self-start lg:overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {shown ? <Hover data={shown} season={season} onClear={selected && !hovered ? () => setSelectedGeoid(null) : null} /> : <Search season={season} onSelect={setSelectedGeoid}/>}
         </aside>
 
