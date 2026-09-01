@@ -65,7 +65,7 @@ export default function Home() {
         <aside
           aria-label="County detail"
           className="shrink-0 border border-black/10 bg-white lg:max-h-full lg:min-w-[19rem] lg:flex-1 lg:self-start lg:overflow-y-auto">
-          {shown ? <Hover data={shown} season={season} onClear={selected && !hovered ? () => setSelectedGeoid(null) : null} /> : <Search season={season} onSelect={setSelectedGeoid}/>}
+          {shown ? <Hover data={shown} season={season} onClear={selected ? () => setSelectedGeoid(null) : null} /> : <Search season={season} onSelect={setSelectedGeoid}/>}
         </aside>
 
       </div>
