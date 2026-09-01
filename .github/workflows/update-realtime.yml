@@ -2,6 +2,8 @@ name: Update realtime data
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 12 3,17 * *"
 
 jobs:
   update:
